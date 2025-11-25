@@ -1,26 +1,26 @@
 [tool.poetry]
-name = "polygon-api-client"
+name = "massive"
 version = "0.0.0"
-description = "Official Polygon.io REST and Websocket client."
-authors = ["polygon.io"]
+description = "Official Massive (formerly Polygon.io) REST and Websocket client."
+authors = ["massive.com"]
 license = "MIT"
-homepage = "https://polygon.io"
-repository = "https://github.com/polygon-io/client-python"
-documentation = "https://polygon.io/docs"
+homepage = "https://massive.com"
+repository = "https://github.com/massive-com/client-python"
+documentation = "https://massive.com/docs"
 keywords = [
-  "polygon",
+  "massive",
   "free",
   "rest",
   "stock",
   "market",
   "data",
   "api",
-  "polygon.io",
+  "massive.com",
   "websocket",
   "client"
 ]
 packages = [
-  { include = "polygon" }
+  { include = "massive" }
 ]
 
 [tool.poetry.dependencies]
@@ -36,11 +36,11 @@ types-urllib3 = "^1.26.25"
 Sphinx = "^7.4.7"
 sphinx-rtd-theme = "^3.0.2"
 # keep this in sync with docs/requirements.txt for readthedocs.org
-sphinx-autodoc-typehints = "^2.0.1"
+sphinx-autodoc-typehints = "^2.3.0"
 types-certifi = "^2021.10.8"
 types-setuptools = "^80.9.0"
 pook = "^2.1.4"
-orjson = "^3.11.3"
+orjson = "^3.11.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

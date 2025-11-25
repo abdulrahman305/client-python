@@ -16,7 +16,7 @@ class FuturesAgg:
     close: Optional[float] = None
     volume: Optional[float] = None
     dollar_volume: Optional[float] = None
-    transaction_count: Optional[int] = None
+    transactions: Optional[int] = None
     window_start: Optional[int] = None
     session_end_date: Optional[str] = None
     settlement_price: Optional[float] = None
@@ -31,7 +31,7 @@ class FuturesAgg:
             close=d.get("close"),
             volume=d.get("volume"),
             dollar_volume=d.get("dollar_volume"),
-            transaction_count=d.get("transaction_count"),
+            transactions=d.get("transactions"),
             window_start=d.get("window_start"),
             session_end_date=d.get("session_end_date"),
             settlement_price=d.get("settlement_price"),
@@ -390,4 +390,34 @@ class FuturesSnapshot:
                 if d.get("session")
                 else None
             ),
+        )
+
+
+@modelclass
+class FuturesExchange:
+    """
+    Represents a futures exchange or trading venue.
+    Corresponds to /futures/vX/exchanges endpoint.
+    """
+
+    acronym: Optional[str] = None
+    id: Optional[str] = None
+    locale: Optional[str] = None
+    mic: Optional[str] = None
+    name: Optional[str] = None
+    operating_mic: Optional[str] = None
+    type: Optional[str] = None
+    url: Optional[str] = None
+
+    @staticmethod
+    def from_dict(d):
+        return FuturesExchange(
+            acronym=d.get("acronym"),
+            id=d.get("id"),
+            locale=d.get("locale"),
+            mic=d.get("mic"),
+            name=d.get("name"),
+            operating_mic=d.get("operating_mic"),
+            type=d.get("type"),
+            url=d.get("url"),
         )
